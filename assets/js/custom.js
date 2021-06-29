@@ -29,15 +29,31 @@ var petras = [
 //Eventas skirtas issaukti reakcija paspaudus mygtuka
 var pasisveikinimas = 'Labas lietuva!';
 
-document.getElementById('kvietejas').onclick = function() {
-    //kaunasLietuva();
+
+
+
+
+
+
+document.getElementById('kvietejas').addEventListener("click", ikrepseli);
+
+function ikrepseli() {
+    var kiekis = document.getElementById('kiekis').value;
+    var zodis  = 'prekę';
+
+    if(( kiekis > 1 && kiekis < 10 ) ) {
+        zodis = 'prekes';
+    } 
+
+    if( (kiekis >= 10 && kiekis <= 20) || kiekis%10 == 0) {
+        zodis = 'prekių';
+    } 
+
+    document.getElementById('messages').innerHTML = 'Jūs sėkmingai pridėjote ' + kiekis + ' ' + zodis + '  į savo krepšelį!';
+
+    //alert('Jūs sėkmingai pridėjote ' + kiekis + ' prekę į savo krepšelį!');
 }
 
-function kaunasLietuva(x) {
-    console.log(x);
-    alert(x);
-}
+//kaunasLietuva(petras);
 
-kaunasLietuva(petras);
 
-pasisveikinimas = 'Viso gero!';
