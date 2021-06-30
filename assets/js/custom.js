@@ -38,14 +38,15 @@ var pasisveikinimas = 'Labas lietuva!';
 document.getElementById('kvietejas').addEventListener("click", ikrepseli);
 
 function ikrepseli() {
+
     var kiekis = document.getElementById('kiekis').value;
-    var zodis  = 'prekę';
+    var zodis  = 'prekes';
 
-    if(( kiekis > 1 && kiekis < 10 ) ) {
-        zodis = 'prekes';
-    } 
+    if(kiekis%10 == 1) {
+        zodis  = 'prekę';
+    }
 
-    if( (kiekis >= 10 && kiekis <= 20) || kiekis%10 == 0) {
+    if( (kiekis > 10 && kiekis < 20) || kiekis%10 == 0) {
         zodis = 'prekių';
     } 
 
