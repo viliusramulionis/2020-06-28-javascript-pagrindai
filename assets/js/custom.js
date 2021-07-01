@@ -100,7 +100,7 @@ var petras = [
     9
 ];
 
-console.log(petras[0]);
+//console.log(petras[0]);
 
 const duomenys = [
     {
