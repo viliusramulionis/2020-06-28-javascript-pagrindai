@@ -123,8 +123,18 @@ const duomenys = [
     }
 ];
 
-for(let eile in duomenys) {
-    console.log(duomenys[eile]['miestas']);
+
+for(let indeksas in duomenys) {
+
+    let eilute = ''; 
+
+    for(let tekstas in duomenys[indeksas]) {
+
+        eilute += duomenys[indeksas][tekstas] + ' ';
+    }
+
+    console.log(eilute);
+
 }
 
 /*for(let i = 0; i < petras.length; i++) {

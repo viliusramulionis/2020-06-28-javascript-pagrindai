@@ -2,10 +2,25 @@
     width: 100%;
     border: 1px solid #ccc;
     margin-top: 2rem;
+    border-collapse: collapse;
 }
 
 .lentele th {
     font-weight: 600;
     border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
     text-align: left;
+    padding: 0.5rem;
+}
+
+.lentele td {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+.lentele th:last-child,
+.lentele td:last-child {
+    border-right: none;
 }
