@@ -1,0 +1,11 @@
+.lentele {
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-top: 2rem;
+}
+
+.lentele th {
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}

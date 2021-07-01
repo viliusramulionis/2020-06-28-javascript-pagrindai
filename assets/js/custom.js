@@ -50,11 +50,86 @@ function ikrepseli() {
         zodis = 'prekių';
     } 
 
-    document.getElementById('messages').innerHTML = 'Jūs sėkmingai pridėjote ' + kiekis + ' ' + zodis + '  į savo krepšelį!';
+    var zinute = 'Jūs sėkmingai pridėjote ' + kiekis + ' ' + zodis + '  į savo krepšelį!';
+
+    if(kiekis > 100) 
+         zinute = 'Jūsų pasirinktas prekių kiekis yra didesnis nei leistinas.'
+
+    if(kiekis < 1)
+         zinute = 'Pasirinktas per mažas kiekis.';
+
+    document.getElementById('messages').innerHTML = '';
 
     //alert('Jūs sėkmingai pridėjote ' + kiekis + ' prekę į savo krepšelį!');
 }
 
 //kaunasLietuva(petras);
+
+
+document.getElementById('reset').addEventListener("click", atnaujinti);
+
+function atnaujinti() {
+
+    location.reload();
+
+}
+
+var i = 0;
+
+while(i < 10) {
+
+    //console.log(i);
+    i++;
+
+}
+
+i = 0;
+
+do {
+    //console.log('Skaicius yra: ' + i);
+    i++;
+}
+while (i < 10)
+
+
+var petras = [
+    5 , 
+    6, 
+    7 , 
+    8 , 
+    9
+];
+
+console.log(petras[0]);
+
+const duomenys = [
+    {
+        miestas: "Kaunas",
+        adresas: "Jonavos 56",
+        data: "2020-07-01",
+        kiekis: "10"
+    },
+    {
+        miestas: "Vilnius",
+        adresas: "Gelezinio vilko 20",
+        data: "2020-07-01",
+        kiekis: "15"
+    },
+    {
+        miestas: "Klaipeda",
+        adresas: "Ligonines 20",
+        data: "2020-07-01",
+        kiekis: "25"
+    }
+];
+
+for(let eile in duomenys) {
+    console.log(duomenys[eile]['miestas']);
+}
+
+/*for(let i = 0; i < petras.length; i++) {
+    console.log('Masyvo petras indeksas: ' + petras[i]);
+}*/
+
 
 
