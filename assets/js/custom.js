@@ -16,10 +16,9 @@ skaiciavimas = skaiciavimas / 3;
 
 var petras = [
     0 , 
-    'Labas lietuva' , 
+    15,
     2 , 
     3 , 
-    [1, 2, 3]
 ];
 
 //console.log( petras[1] );
@@ -173,13 +172,30 @@ switch(reiksme) {
 document.getElementById('rodyti').onclick = function() {
 
     var lentele = document.getElementById('lentele');
-  
+    
+    lentele.classList.toggle('show'); 
+
     if( lentele.classList.contains('show') == false ) {
-        lentele.classList.add('show'); 
         document.getElementById('rodyti').innerText = 'Slėpti';
     } else {
-        lentele.classList.remove('show');   
         document.getElementById('rodyti').innerText = 'Rodyti';
     }
-  
+
 };
+
+document.getElementById('skaiciuoti').onclick = function() {
+
+    var skaiciuokles = [
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+    ];
+    
+    var total = 0;
+    
+    for(let i = 0; i < skaiciuokles.length; i++) {
+        total += skaiciuokles[i];
+    }
+
+    document.getElementById('total').innerHTML = total;
+
+};
+
