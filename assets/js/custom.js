@@ -102,6 +102,10 @@ var petras = [
 
 //console.log(petras[0]);
 
+/*for(let i = 0; i < petras.length; i++) {
+    console.log('Masyvo petras indeksas: ' + petras[i]);
+}*/
+
 const duomenys = [
     {
         miestas: "Kaunas",
@@ -124,22 +128,28 @@ const duomenys = [
 ];
 
 
+let html = '';
+let ending = '';
+
+html = '<tbody>';
+
 for(let indeksas in duomenys) {
 
-    let eilute = ''; 
+    html += '<tr>'; 
 
-    for(let tekstas in duomenys[indeksas]) {
+    for(let indeksas2 in duomenys[indeksas]) {
+        
+        html += '<td>' + duomenys[indeksas][indeksas2] + '</td>';
 
-        eilute += duomenys[indeksas][tekstas] + ' ';
     }
 
-    console.log(eilute);
+    html += '</tr>';
+
+    //console.log(eilute);
 
 }
 
-/*for(let i = 0; i < petras.length; i++) {
-    console.log('Masyvo petras indeksas: ' + petras[i]);
-}*/
+html += '</tbody>';
 
-
+document.getElementById('lentele').innerHTML += html;
 
