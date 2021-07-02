@@ -147,5 +147,25 @@ for(let indeksas in duomenys) {
 
 }
 
-document.getElementById('lentelesVidus').innerHTML += html;
+document.getElementById('lentelesVidus').innerHTML = html;
 
+function testineFunkcija() {
+
+}
+
+let reiksme = 0;
+
+switch(reiksme) {
+
+    case 0:
+        testineFunkcija();
+    break;
+
+    case 1:
+        alert('Reiksme yra 1');
+    break;
+
+    default:
+        alert('Reiksmes nera');
+
+}
