@@ -169,3 +169,17 @@ switch(reiksme) {
         alert('Reiksmes nera');
 
 }
+
+document.getElementById('rodyti').onclick = function() {
+
+    var lentele = document.getElementById('lentele');
+  
+    if( lentele.classList.contains('show') == false ) {
+        lentele.classList.add('show'); 
+        document.getElementById('rodyti').innerText = 'Slėpti';
+    } else {
+        lentele.classList.remove('show');   
+        document.getElementById('rodyti').innerText = 'Rodyti';
+    }
+  
+};
