@@ -131,8 +131,6 @@ const duomenys = [
 let html = '';
 let ending = '';
 
-html = '<tbody>';
-
 for(let indeksas in duomenys) {
 
     html += '<tr>'; 
@@ -149,7 +147,5 @@ for(let indeksas in duomenys) {
 
 }
 
-html += '</tbody>';
-
-document.getElementById('lentele').innerHTML += html;
+document.getElementById('lentelesVidus').innerHTML += html;
 
