@@ -199,5 +199,37 @@ document.getElementById('skaiciuoti').onclick = function() {
 
 }
 
+document.getElementById('submit').onclick = function() {
+
+    var el = document.getElementById('pasirinkimas');
+
+    var tekstas = '';
+
+    switch(el.value) {
+
+        case 'volvo':
+            tekstas = 'Daug masės, daug plieno.';
+            break;
+
+        case 'saab':
+            tekstas = 'Švedų mašina';
+            break;
+
+        case 'opel':
+            tekstas = 'Stovėdamas rūdiją';
+            break;
+
+        case 'audi':
+            tekstas = 'Audi nečiaudi';
+            break;
+
+        default:
+            tekstas = 'Velniop tą mašiną';
+
+    }
+
+    alert(tekstas);
+	
+}
 
 
