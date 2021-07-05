@@ -176,9 +176,9 @@ document.getElementById('rodyti').onclick = function() {
     lentele.classList.toggle('show'); 
 
     if( lentele.classList.contains('show') == false ) {
-        document.getElementById('rodyti').innerText = 'Slėpti';
-    } else {
         document.getElementById('rodyti').innerText = 'Rodyti';
+    } else {
+        document.getElementById('rodyti').innerText = 'Slėpti';
     }
 
 }
