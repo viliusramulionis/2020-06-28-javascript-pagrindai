@@ -181,7 +181,7 @@ document.getElementById('rodyti').onclick = function() {
         document.getElementById('rodyti').innerText = 'Rodyti';
     }
 
-};
+}
 
 document.getElementById('skaiciuoti').onclick = function() {
 
@@ -197,5 +197,7 @@ document.getElementById('skaiciuoti').onclick = function() {
 
     document.getElementById('total').innerHTML = total;
 
-};
+}
+
+
 
