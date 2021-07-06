@@ -234,12 +234,12 @@ document.getElementById('submit').onclick = function() {
 
 jQuery(document).ready(function() {
 
-    jQuery('.naujasmygtukas').addClass('klase');
-
-    jQuery('#naujasmygtukas').removeClass('klase');
-
     jQuery('.naujasmygtukas').click(function(){
-        alert('Paspaudimas');
+
+        jQuery('.naujasmygtukas').addClass('klase');
+
+        jQuery('#naujasmygtukas').removeClass('klase');
+        
     });
 
 });
