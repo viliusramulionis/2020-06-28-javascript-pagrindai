@@ -146,7 +146,7 @@ for(let indeksas in duomenys) {
 
 }
 
-document.getElementById('lentelesVidus').innerHTML = html;
+//document.getElementById('lentelesVidus').innerHTML = html;
 
 function testineFunkcija() {
 
@@ -240,6 +240,12 @@ jQuery(document).ready(function() {
 
         jQuery('#naujasmygtukas').removeClass('klase');
         
+    });
+
+    jQuery(duomenys).each(function(indeksas, reiksme) {
+
+        jQuery('#lentele tbody').append('<td>UAB Teso</td><td>1</td><td>2</td><td>3</td><td>3</td><td>4<td><td>5</td>');
+
     });
 
 });
