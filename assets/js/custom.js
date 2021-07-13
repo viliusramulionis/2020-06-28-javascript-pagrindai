@@ -243,9 +243,13 @@ jQuery(document).ready(function() {
     });
 
     jQuery(duomenys).each(function(indeksas, reiksme) {
+        
+        //append()
+        //prepend()
+        //html()
 
-        jQuery('#lentele tbody').append('<td>UAB Teso</td><td>1</td><td>2</td><td>3</td><td>3</td><td>4<td><td>5</td>');
-
+        jQuery('#lentele tbody').append('<tr><td>'+reiksme['miestas']+'</td><td>'+reiksme['adresas']+'</td><td>2</td><td>3</td><td>3</td><td>4</td><td>5</td></tr>');
+    
     });
 
 });
