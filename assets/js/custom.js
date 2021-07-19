@@ -57,7 +57,7 @@ function ikrepseli() {
     if(kiekis < 1)
          zinute = 'Pasirinktas per mažas kiekis.';
 
-    document.getElementById('messages').innerHTML = '';
+    document.getElementById('messages').innerHTML = zinute;
 
     //alert('Jūs sėkmingai pridėjote ' + kiekis + ' prekę į savo krepšelį!');
 }
@@ -298,14 +298,13 @@ document.querySelector('.appended-text').innerHTML += '<p>Pirmas: '+ fdigit +', 
 //Penkta užduotis
 document.querySelector('.appended-text').innerHTML += '<h3>Penkta užduotis</h3>';
 
-const fourth_fdigit = randomSkaicius(0, 25);
-const fourth_sdigit = randomSkaicius(0, 25);
-const fourth_tdigit = randomSkaicius(0, 25);
+const fourth_fdigit = 10;
+const fourth_sdigit = 10;
+const fourth_tdigit = 20;
 
 let mediana = Math.max( 
     Math.min( fourth_fdigit, fourth_sdigit ), 
-    Math.min( Math.max( fourth_fdigit, fourth_sdigit), 
-    fourth_tdigit)
+    Math.min( Math.max( fourth_fdigit, fourth_sdigit), fourth_tdigit)
 );
 
 document.querySelector('.appended-text').innerHTML += '<p>Pirmas: '+ fourth_fdigit +', Antras: ' + fourth_sdigit + ' Trecias: ' + fourth_tdigit + ' Mediana: <strong>' + mediana + '</strong></p>';
@@ -392,8 +391,39 @@ document.querySelector('.appended-text').innerHTML += '<p>Užsakytos žvakės: '
 window.onscroll = function() {
     let puslapioAukstis     = document.body.scrollHeight;
     let paslinkimoPozicija  = window.pageYOffset;
-    let procentinePozicija  = Math.round((paslinkimoPozicija / puslapioAukstis) * 100); 
+    let langoAukstis        = window.innerHeight;
+    let procentinePozicija  = Math.round((paslinkimoPozicija + langoAukstis) / puslapioAukstis * 100); 
 
     console.log(procentinePozicija + '%');
+}
+
+
+function testinisPavyzdys(test) {
+
+    if(test > 10) {
+        return 'daugiau negu desimt';
+    } 
+
+    return 'nera';
 
 }
+
+console.log(testinisPavyzdys(11));
+
+//let elementas = document.getElementById('test');
+let tekstas = '<h3>Testinis elementas</h3>';
+
+function testHTML(el, txt) {
+    document.querySelector(el).innerHTML += txt;
+}
+
+//testHTML('#test', tekstas);
+
+document.getElementById('launch-test').onclick = function() {
+    testHTML('#test', tekstas);
+}
+
+let skaicius = 1;
+
+if(Number.isInteger(skaicius)) //true arba false
+    console.log('Yra');
