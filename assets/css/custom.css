@@ -1,3 +1,6 @@
+body {
+    min-height: 10000px; 
+}
 .lentele {
     width: 100%;
     border: 1px solid #ccc;

@@ -253,3 +253,147 @@ jQuery(document).ready(function() {
     });
 
 });
+
+//Užduotys 2021-07-15
+document.querySelector('.appended-text').innerHTML = '<h2>Užduotys 2021-07-15</h2>';
+
+//Pirma užduotis
+document.querySelector('.appended-text').innerHTML += '<h3>Pirma užduotis</h3>';
+
+const fname = 'Vilius';
+const lname = 'Ramulionis';
+const bday  = '1990-11-21';
+
+let text = '<p>Aš esu ' + fname + ' ' + lname + ' gimęs ' + bday + '</p>';
+
+document.querySelector('.appended-text').innerHTML += text;
+
+//Antra užduotis
+document.querySelector('.appended-text').innerHTML += '<h3>Antra užduotis</h3>';
+
+const trupmena = 109.23654;
+
+let suapvalinta = Math.round(trupmena);
+
+document.querySelector('.appended-text').innerHTML += '<p>Sveikas skaičius: <strong>' + suapvalinta + '</strong></p>';
+
+//Ketvirta užduotis
+document.querySelector('.appended-text').innerHTML += '<h3>Ketvirta užduotis</h3>';
+
+function randomSkaicius(min, max) { 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+
+const fdigit = randomSkaicius(0, 4); //2
+const sdigit = randomSkaicius(0, 4); //0
+
+let digitresult = Math.round(fdigit / sdigit);
+
+if(sdigit == 0)     
+    digitresult = 'Dalyba negalima';
+
+document.querySelector('.appended-text').innerHTML += '<p>Pirmas: '+ fdigit +', Antras: ' + sdigit + ' Padalinus gaunam: <strong>' + digitresult + '</strong></p>';
+
+//Penkta užduotis
+document.querySelector('.appended-text').innerHTML += '<h3>Penkta užduotis</h3>';
+
+const fourth_fdigit = randomSkaicius(0, 25);
+const fourth_sdigit = randomSkaicius(0, 25);
+const fourth_tdigit = randomSkaicius(0, 25);
+
+let mediana = Math.max( 
+    Math.min( fourth_fdigit, fourth_sdigit ), 
+    Math.min( Math.max( fourth_fdigit, fourth_sdigit), 
+    fourth_tdigit)
+);
+
+document.querySelector('.appended-text').innerHTML += '<p>Pirmas: '+ fourth_fdigit +', Antras: ' + fourth_sdigit + ' Trecias: ' + fourth_tdigit + ' Mediana: <strong>' + mediana + '</strong></p>';
+
+//Šešta užduotis
+document.querySelector('.appended-text').innerHTML += '<h3>Šešta užduotis</h3>';
+
+let randomskaicius = Math.random() * 2.5;
+
+document.querySelector('.appended-text').innerHTML += '<p>Random skaičius: <strong>' + randomskaicius + '</strong></p>';
+
+//Septinta užduotis
+document.querySelector('.appended-text').innerHTML += '<h3>Septinta užduotis</h3>';
+
+const sieben_fdigit = randomSkaicius(-10, 10);
+const sieben_sdigit = randomSkaicius(-10, 10);
+const sieben_tdigit = randomSkaicius(-10, 10);
+
+let sieben_return = '';
+
+//Tikrinam pirma skaicius
+
+if(sieben_fdigit < 0) {
+    sieben_return += '<span style="color:red;">' + sieben_fdigit + '</span> ';
+}
+
+if(sieben_fdigit == 0) {
+    sieben_return += '<span style="color:blue;">' + sieben_fdigit + '</span> ';
+}
+
+if(sieben_fdigit > 0) {
+    sieben_return += '<span style="color:green;">' + sieben_fdigit + '</span> ';
+}
+
+//Tikrinam antra skaicius
+
+if(sieben_sdigit < 0) {
+    sieben_return += '<span style="color:red;">' + sieben_sdigit + '</span> ';
+}
+
+if(sieben_sdigit == 0) {
+    sieben_return += '<span style="color:blue;">' + sieben_sdigit + '</span> ';
+}
+
+if(sieben_sdigit > 0) {
+    sieben_return += '<span style="color:green;">' + sieben_sdigit + '</span> ';
+}
+
+//Tikrinam trecia skaicius
+
+if(sieben_tdigit < 0) {
+    sieben_return += '<span style="color:red;">' + sieben_tdigit + '</span> ';
+}
+
+if(sieben_tdigit == 0) {
+    sieben_return += '<span style="color:blue;">' + sieben_tdigit + '</span> ';
+}
+
+if(sieben_tdigit > 0) {
+    sieben_return += '<span style="color:green;">' + sieben_tdigit + '</span> ';
+}
+
+document.querySelector('.appended-text').innerHTML += '<p>Trys skaičiai: <strong>' + sieben_return + '</strong></p>';
+
+//Aštunta užduotis
+
+document.querySelector('.appended-text').innerHTML += '<h3>Aštunta užduotis</h3>';
+
+const zvakiu_kiekis = randomSkaicius(5, 3000);
+let nuolaida = 0;
+
+if(zvakiu_kiekis >= 1000) 
+    nuolaida = 3; 
+
+if(zvakiu_kiekis >= 2000) 
+    nuolaida = 4; 
+
+let suma = zvakiu_kiekis - ( (zvakiu_kiekis / 100) * nuolaida);
+
+document.querySelector('.appended-text').innerHTML += '<p>Užsakytos žvakės: ' + zvakiu_kiekis + ' Sandorio suma: <strong>€ ' + suma + '</strong></p>';
+
+//Devinta užduotis
+
+window.onscroll = function() {
+    let puslapioAukstis     = document.body.scrollHeight;
+    let paslinkimoPozicija  = window.pageYOffset;
+    let procentinePozicija  = Math.round((paslinkimoPozicija / puslapioAukstis) * 100); 
+
+    console.log(procentinePozicija + '%');
+
+}
