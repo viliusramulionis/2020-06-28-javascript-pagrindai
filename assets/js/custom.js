@@ -397,7 +397,7 @@ window.onscroll = function() {
     console.log(procentinePozicija + '%');
 }
 
-
+/*
 function testinisPavyzdys(test) {
 
     if(test > 10) {
@@ -427,3 +427,145 @@ let skaicius = 1;
 
 if(Number.isInteger(skaicius)) //true arba false
     console.log('Yra');
+
+*/
+
+//2021-07-20
+
+//Užduotys 2021-07-20
+document.querySelector('.appended-text').innerHTML += '<h2>Užduotys 2021-07-20</h2>';
+
+//Pirma užduotis
+document.querySelector('.appended-text').innerHTML += '<h3>Pirma užduotis</h3>';
+
+
+/*
+let tekstas = ''; //Tusčias kintamasis kuriam nurodome, tapti stringo tipo elementu
+let counter = 0; //Antrasis skaičiavimo elementas, apskaičiuoti 50-ies ribą
+
+
+// let i = 0; Pirmas parametras nusako kintamaji su reiksme 0. 
+// Antrasis nusako kondiciją kada ciklas turėtų nutrūkti
+// Trečiasis liepia kintamajam i prie savęs pridėti skaičių 1
+
+for (let i = 0; i < 400; i++) { 
+
+    if(counter == 50) { //Jeigu kintamasis counter pasiekia skaičių 50
+        tekstas += '<br />'; //kintamasis tekstas prisideda html tag'ą 
+        counter = 0; //kintamasis counter grįžta į originalią reikšmę
+    }
+
+    tekstas += '*'; //Kiekvieno ciklo eigoje pridedamas simbolis
+
+    counter++; //Taip pat kaip ir ciklo pradžioje su kintamuoju "i", ciklo pabaigoje pridedam prie kintamojo +1
+
+    //i = 0;
+}
+
+document.querySelector('.appended-text').innerHTML += tekstas;
+*/
+
+
+let tekstas = ''; //Tusčias kintamasis kuriam nurodome, tapti stringo tipo elementu
+
+
+// let i = 0; Pirmas parametras nusako kintamaji su reiksme 0. 
+// Antrasis nusako kondiciją kada ciklas turėtų nutrūkti
+// Trečiasis liepia kintamajam i prie savęs pridėti skaičių 1
+
+for (let i = 0; i < 400; i++) { 
+
+    if(i != 0 && i%50 == 0) { //Jeigu kintamasis counter pasiekia skaičių 50
+        tekstas += '<br />'; //kintamasis tekstas prisideda html tag'ą 
+    }
+
+    tekstas += '*'; //Kiekvieno ciklo eigoje pridedamas simbolis
+}
+
+document.querySelector('.appended-text').innerHTML += tekstas;
+
+//Antra užduotis
+document.querySelector('.appended-text').innerHTML += '<h3>Antra užduotis</h3>';
+
+let skaicius    = 0; //Skaiciaus kintamasis kuri sugeneruosime cikle
+let eile        = ''; //Po ciklo grazinama reiksmiu eile
+let didesni     = 0; //Kintamasis su kuriuo skaiciuojame kiek skaiciu yra esantys didesni nei 150
+
+for (let i = 0; i < 300; i++) { //Paleidziam cikla 
+    skaicius = randomSkaicius(0, 300); //Pasitelkdami auksciau integruota funkcija sugeneruojame skaiciu
+    
+    if(skaicius > 150) //Jeigu skaicius yra didesnis nei 150, pradedame skaiciuoti ju kieki
+        didesni++;
+
+    if(skaicius > 275) { //Jei sugeneruotas skaicius didesnis nei 275
+        eile += '<span style="color: red;">' + skaicius + '</span>'; //jam priskiriame raudona spalva
+    } else { //Priesingu atveju (Jei skaicius nera didesnis nei 275)
+        eile += skaicius; //Kintamasis eile tiesiog prisiraso skaiciaus reiksme
+    }
+
+    if(i != 299) //Jeigu dabartinis ciklas nera paskutine eilute
+        eile += ', '; //Pridedame kableli kiekvienai eilutei, kuri nera paskutine
+
+}
+
+document.querySelector('.appended-text').innerHTML += eile;
+document.querySelector('.appended-text').innerHTML += '<h4>Skaičiai didesni už 150: </h4><strong>' + didesni + '</strong>';
+
+document.querySelector('.appended-text').innerHTML += '<h3>Trečia užduotis</h3>';
+
+let padalintasSkaicius = 0;
+let xeile = '';
+let kablelis = ', ';
+let daliklis = 77;
+
+for (let i = 1; i <= 3000; i++) {
+
+    padalintasSkaicius = i / daliklis;
+
+    if(Number.isInteger(padalintasSkaicius)) {
+
+        if(i != daliklis) {
+            xeile += kablelis;
+        }
+
+        xeile += i;
+    }
+
+    if(i == 3000) {
+        xeile += '.';
+    }
+
+}
+
+document.querySelector('.appended-text').innerHTML += xeile;
+
+//let graza = (daliklis == 77) ? 'Tekstas' : 'Nera';
+/*
+graza = '';
+
+if(daliklis == 66) {
+    graza = 'Tekstas';
+} else {
+    graza = 'Nera';
+}*/
+
+//console.log(graza);
+
+document.querySelector('.appended-text').innerHTML += '<h3>Ketvirta užduotis</h3>';
+
+let kvadratas = '';
+let kvadrato_dydis = 100;
+let kvadrato_dydis_paskaiciuotas = kvadrato_dydis * kvadrato_dydis;
+let eilute = 0;
+
+for (let i = 1; i <= kvadrato_dydis_paskaiciuotas; i++) {
+
+    kvadratas += '*';
+    
+    if(i != 1 && i%kvadrato_dydis == 0)
+        kvadratas += '<br />';
+
+    eilute++;
+}
+
+document.querySelector('.appended-text').innerHTML += kvadratas;
