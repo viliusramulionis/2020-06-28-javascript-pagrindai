@@ -284,7 +284,6 @@ function randomSkaicius(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-
 const fdigit = randomSkaicius(0, 4); //2
 const sdigit = randomSkaicius(0, 4); //0
 
@@ -554,18 +553,80 @@ if(daliklis == 66) {
 document.querySelector('.appended-text').innerHTML += '<h3>Ketvirta užduotis</h3>';
 
 let kvadratas = '';
-let kvadrato_dydis = 100;
+let kvadrato_dydis = 10;
 let kvadrato_dydis_paskaiciuotas = kvadrato_dydis * kvadrato_dydis;
 let eilute = 0;
+let laikinas = 0;
 
 for (let i = 1; i <= kvadrato_dydis_paskaiciuotas; i++) {
 
-    kvadratas += '*';
+    let sekanti_eilute = i + eilute;
+
+    if(i%kvadrato_dydis == 0 ) {
+        laikinas++;
+    }
+
+    if(sekanti_eilute%kvadrato_dydis == 0 && i != kvadrato_dydis_paskaiciuotas) {
+        kvadratas += '<span style="color: red">*</span>';
+        eilute++;
+    } else if(i == (((laikinas*kvadrato_dydis) + laikinas) + 1)) {
+        kvadratas += '<span style="color: red">*</span>';
+    } else if(i == kvadrato_dydis_paskaiciuotas) {
+        kvadratas += '<span style="color: red">*</span>';
+    } else {
+        kvadratas += '*';
+    }
+
+    //console.log((sekanti_eilute-kvadrato_dydis)%kvadrato_dydis);
     
     if(i != 1 && i%kvadrato_dydis == 0)
         kvadratas += '<br />';
 
-    eilute++;
+    //console.log(sekanti_eilute);
 }
 
-document.querySelector('.appended-text').innerHTML += kvadratas;
+document.querySelector('.appended-text').innerHTML += '<div class="4e">' + kvadratas + '</div>';
+
+document.querySelector('.appended-text').innerHTML += '<h3>Penkta užduotis</h3>';
+
+let benas  = 0;
+let jovita = 0;
+let final  = 222;
+let string = '';
+let ended = false;
+
+for (let i = 0; i <= 1000; i++) {
+    
+    if(ended)
+        break; //continue;
+
+    let bscore = randomSkaicius(10, 20);
+    let jscore = randomSkaicius(5, 25);
+
+    if(bscore == 12 || jscore == 12) {
+        document.querySelector('.appended-text').innerHTML += (i + 1) + ' Partija Iškrito 12 <br />';    
+        continue;
+    }
+
+    benas   += bscore;
+    jovita  += jscore;
+
+    document.querySelector('.appended-text').innerHTML += (i + 1) + ' Partija Beno taškai: ' + bscore + ' Jovitos taškai: ' + jscore + '<br />';
+
+    if(benas >= final || jovita >= final) {
+        
+        ended = true;
+
+        if(benas >= final) {
+            string = 'Benas, Taškų kiekis:' + benas;
+        } else {
+            string = 'Jovita, Taškų kiekis:' + jovita;
+        }
+
+        document.querySelector('.appended-text').innerHTML += 'Partiją laimėjo: ' + string ;
+
+    }
+}
+
+//document.querySelector('a[href="testas"]').innerText += 'TEST';
+
