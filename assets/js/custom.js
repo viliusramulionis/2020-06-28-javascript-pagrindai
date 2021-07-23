@@ -587,6 +587,8 @@ for (let i = 1; i <= kvadrato_dydis_paskaiciuotas; i++) {
 
 document.querySelector('.appended-text').innerHTML += '<div class="4e">' + kvadratas + '</div>';
 
+//Penkta užduotis
+
 document.querySelector('.appended-text').innerHTML += '<h3>Penkta užduotis</h3>';
 
 let benas  = 0;
@@ -628,5 +630,104 @@ for (let i = 0; i <= 1000; i++) {
     }
 }
 
-//document.querySelector('a[href="testas"]').innerText += 'TEST';
+//Šešta užduotis
+document.querySelector('.appended-text').innerHTML += '<div class="sesta_uzduotis"></div>';
 
+document.querySelector('.sesta_uzduotis').innerHTML += '<h3>Šešta užduotis</h3>';
+
+let el_sesta = document.querySelector('.sesta_uzduotis');
+
+el_sesta.innerHTML += '<h4>Maži smūgiai</h4>';
+
+let vinies_ilgis  = 85;
+let smugis_nuo    = 5;
+let smugis_iki    = 20;          
+let viniu_kiekis  = 5;
+
+i = 1;
+
+while (i <= viniu_kiekis) {
+
+    let smugiai = 0;
+    let ikalta  = 0;
+
+    while(ikalta <= vinies_ilgis) {
+        ikalta += randomSkaicius(smugis_nuo, smugis_iki);
+        smugiai++;
+    }
+
+    el_sesta.innerHTML += i + ' vinis įkaltas per ' + smugiai + ' smūgius <br />';
+
+    i++;
+}
+
+el_sesta.innerHTML += '<h4>Dideli smūgiai</h4>';
+
+smugis_nuo    = 20;
+smugis_iki    = 30; 
+i             = 1;
+
+while (i <= viniu_kiekis) {
+
+    let smugiai     = 0;
+    let ikalta      = 0;
+    let nepataikyta = 0;
+
+    while(ikalta <= vinies_ilgis) {
+
+        let tikimybe = randomSkaicius(0, 1);
+        
+        smugiai++;
+
+        if(tikimybe == 0) {
+            nepataikyta++;
+            continue;
+        }
+
+        ikalta += randomSkaicius(smugis_nuo, smugis_iki);
+
+    }
+
+    el_sesta.innerHTML += i + ' vinis įkaltas per ' + smugiai + ' smūgius, tačiau nepataikėme ' + nepataikyta + ' kartų :/ <br />';
+
+    i++;
+}
+
+//Septinta uzduotis
+
+document.querySelector('.appended-text').innerHTML += '<div class="septinta_uzduotis"></div>';
+
+document.querySelector('.septinta_uzduotis').innerHTML += '<h3>Septinta užduotis</h3>';
+
+let el_septinta = document.querySelector('.septinta_uzduotis');
+
+el_septinta.innerHTML += '<div class="septintaTevinisElementas"></div>';
+
+let el_tevinis = document.querySelector('.septintaTevinisElementas');
+
+
+let tevinio_aukstis = el_tevinis.offsetHeight;
+let tevinio_plotis  = el_tevinis.offsetWidth;
+let islinde         = 0;
+
+i = 0;
+
+while (i < 300) {
+
+    el_tevinis.innerHTML += '<div class="sukurtasKvadratelis"></div>';
+
+    let elementas = document.querySelectorAll('.sukurtasKvadratelis')[i];
+    let atsitiktinis_virsus = randomSkaicius(0, 550);
+    let atsitiktine_kaire   = randomSkaicius(0, 550);
+
+    elementas.style.top = atsitiktinis_virsus+'px';
+    elementas.style.left = atsitiktine_kaire+'px';
+
+    if((atsitiktinis_virsus > tevinio_aukstis) 
+        || (atsitiktine_kaire > tevinio_plotis))
+        islinde++;
+
+    i++;
+}
+el_tevinis.innerHTML += '<div style="color: #FFF; font-size: 100px; position: absolute; top: 200px; left: 200px; font-weight: bold;">' + islinde + '</div>';
+el_septinta.innerHTML += '<h4 style="margin-top: 100px;">Už kraštinių išsikišūsių elementų suma: ' + islinde + '</h4>';

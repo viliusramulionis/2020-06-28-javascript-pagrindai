@@ -32,3 +32,21 @@ body {
 .lentele td:last-child {
     border-right: none;
 }
+
+.septintaTevinisElementas {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: #000;
+    margin: 0 auto;
+}
+
+.sukurtasKvadratelis {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background: red;
+    border: 1px solid blue;
+}
