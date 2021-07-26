@@ -715,7 +715,7 @@ i = 0;
 while (i < 300) {
 
     el_tevinis.innerHTML += '<div class="sukurtasKvadratelis"></div>';
-
+    
     let elementas = document.querySelectorAll('.sukurtasKvadratelis')[i];
     let atsitiktinis_virsus = randomSkaicius(0, 550);
     let atsitiktine_kaire   = randomSkaicius(0, 550);
@@ -729,5 +729,21 @@ while (i < 300) {
 
     i++;
 }
+
 el_tevinis.innerHTML += '<div style="color: #FFF; font-size: 100px; position: absolute; top: 200px; left: 200px; font-weight: bold;">' + islinde + '</div>';
 el_septinta.innerHTML += '<h4 style="margin-top: 100px;">Už kraštinių išsikišūsių elementų suma: ' + islinde + '</h4>';
+
+
+//split()
+//replace()
+//length
+//substr()
+//slice()
+//toLowerCase()
+//toUpperCase()
+//trim()
+//startsWith() true / false
+//endsWith() true /false
+//includes() true /false
+//indexOf() search()
+//lastIndexOf()
