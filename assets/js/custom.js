@@ -734,12 +734,12 @@ el_tevinis.innerHTML += '<div class="islindeKvadrataiTeviniame">' + islinde + '<
 el_septinta.innerHTML += '<h4 style="margin-top: 100px;">Už kraštinių išsikišūsių elementų suma: ' + islinde + '</h4>';
 
 
+//length
 //split()
 //replace()
-//length
+//repeat()
 //charAt()
 //substr()
-//slice()
 //toLowerCase()
 //toUpperCase()
 //trim()
@@ -748,3 +748,53 @@ el_septinta.innerHTML += '<h4 style="margin-top: 100px;">Už kraštinių išsiki
 //includes() true /false
 //indexOf() search()
 //lastIndexOf()
+
+
+let stringas = 'Pavasarį žydi labai daug medžių';
+
+//Apie length
+//console.log(stringas.length); //Konsoleje atvaizduojamas kintamojo reiksmes simboliu kiekis
+
+//Apie split
+//let stringo_masyvas = stringas.split(' ');
+
+//console.log( stringo_masyvas[4] );
+
+//Apie replace()
+//console.log( stringas.replace('žydi', 'atgminsta') );  //Konsoleje atvaizduojamas naujas sakinys su pakeistu zodziu zydi i zodi atgimsta
+
+//Apie repeat()
+//console.log( stringas.repeat(1) );
+
+//Apie charAt() Graziname viena simboli is specifiskos pozicijos
+//console.log( stringas.charAt(0) );
+
+//Apie substr() Graziname simbolius nuo pirmame parametre nurodytos pozicijos iki antrame parametre nurodyto kiekio
+//console.log( stringas.substr(10, 9) );
+
+//Apie toLowerCase()
+//console.log( stringas.toLowerCase() );
+
+//Apie toUpperCase()
+//console.log( stringas.toUpperCase() );
+
+//Apie trim()
+//stringas = '    Pavasarį žydi labai daug medžių         ';
+
+//console.log( stringas.trim() );
+
+//Apie startsWith() true arba false rezultatas
+//boolean
+//console.log( stringas.startsWith('P') );
+
+//Apie endsWith() auksciau minetos funkcijos priespriesa
+//console.log( stringas.endsWith('ų') );
+
+//Apie includes() 
+//console.log( stringas.includes('v') );
+
+//Apie indexOf() 
+//console.log(stringas.indexOf('žydi'));
+
+//Apie lastIndexOf()
+//console.log(stringas.lastIndexOf('ž'));
