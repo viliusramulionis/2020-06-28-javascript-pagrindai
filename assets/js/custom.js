@@ -695,48 +695,49 @@ while (i <= viniu_kiekis) {
 
 //Septinta uzduotis
 
-document.querySelector('.appended-text').innerHTML += '<div class="septinta_uzduotis"></div>';
+document.querySelector('.appended-text').innerHTML += '<div class="septinta_uzduotis"></div>'; //Užduoties parentinis elementas
 
-document.querySelector('.septinta_uzduotis').innerHTML += '<h3>Septinta užduotis</h3>';
+document.querySelector('.septinta_uzduotis').innerHTML += '<h3>Septinta užduotis</h3>'; //Užduoties headingas, kad atskirti visas mūsų užduotis
 
-let el_septinta = document.querySelector('.septinta_uzduotis');
+let el_septinta = document.querySelector('.septinta_uzduotis'); //Sukuriu kintamaji ir jam priskiriu html elemento reiksme
 
-el_septinta.innerHTML += '<div class="septintaTevinisElementas"></div>';
+el_septinta.innerHTML += '<div class="septintaTevinisElementas"></div>'; //Su naujai sukurtu kintamuoju pridedu html'e dar viena elementa, kuris ir bus juodas kvadratas
 
-let el_tevinis = document.querySelector('.septintaTevinisElementas');
+let el_tevinis = document.querySelector('.septintaTevinisElementas'); //Sukuriu dar viena kintamaji juodo kvardarto elementui
 
 
-let tevinio_aukstis = el_tevinis.offsetHeight;
-let tevinio_plotis  = el_tevinis.offsetWidth;
-let islinde         = 0;
+let tevinio_aukstis = el_tevinis.offsetHeight; //Pasiimame juodo kvadrato auksti naudojant offsetHeight
+let tevinio_plotis  = el_tevinis.offsetWidth; //Pasiimame juodo kvadrato ploti naudojant offsetWidth
+let islinde         = 0; //Islindusiu elementu 
 
-i = 0;
+i = 0; //Counteris nuo kurio prasideda ciklas
 
-while (i < 300) {
+while (i < 300) { //Salyga kiek turi trukti ciklas
 
-    el_tevinis.innerHTML += '<div class="sukurtasKvadratelis"></div>';
+    el_tevinis.innerHTML += '<div class="sukurtasKvadratelis"></div>'; //Kiekvieno ciklo metu sukuriame po mažą kvadratą
     
-    let elementas = document.querySelectorAll('.sukurtasKvadratelis')[i];
-    let atsitiktinis_virsus = randomSkaicius(0, 550);
-    let atsitiktine_kaire   = randomSkaicius(0, 550);
+    let elementas = document.querySelectorAll('.sukurtasKvadratelis')[i]; //Pasiimame visus sukurtus kvadratėlius pagal klasę ir tuomet išfiltruojame pagal dabartinio ciklo numerį
+    let atsitiktinis_virsus = randomSkaicius(0, 550); //Sukuriames atsitiktines reikšmes css top parametrui
+    let atsitiktine_kaire   = randomSkaicius(0, 550); //Sukuriames atsitiktines reikšmes css left parametrui
 
-    elementas.style.top = atsitiktinis_virsus+'px';
-    elementas.style.left = atsitiktine_kaire+'px';
+    elementas.style.top = atsitiktinis_virsus+'px'; //Priskiriame atsitiktinę top reiksmę css stiliuje
+    elementas.style.left = atsitiktine_kaire+'px'; //Priskiriame atsitiktinę left reiksmę css stiliuje
 
     if((atsitiktinis_virsus > tevinio_aukstis) 
-        || (atsitiktine_kaire > tevinio_plotis))
+        || (atsitiktine_kaire > tevinio_plotis)) //Sutikriname ar atsitiktinai sukurto elemento kaire ir desine proprcijos neislenda uz ribu
         islinde++;
 
     i++;
 }
 
-el_tevinis.innerHTML += '<div style="color: #FFF; font-size: 100px; position: absolute; top: 200px; left: 200px; font-weight: bold;">' + islinde + '</div>';
+el_tevinis.innerHTML += '<div class="islindeKvadrataiTeviniame">' + islinde + '</div>';
 el_septinta.innerHTML += '<h4 style="margin-top: 100px;">Už kraštinių išsikišūsių elementų suma: ' + islinde + '</h4>';
 
 
 //split()
 //replace()
 //length
+//charAt()
 //substr()
 //slice()
 //toLowerCase()
