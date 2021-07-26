@@ -798,3 +798,5 @@ let stringas = 'Pavasarį žydi labai daug medžių';
 
 //Apie lastIndexOf()
 //console.log(stringas.lastIndexOf('ž'));
+
+//let test = stringas.lastIndexOf('ž') + stringas.lastIndexOf('ž') + stringas.lastIndexOf('ž') + stringas.lastIndexOf('ž');
