@@ -800,3 +800,149 @@ let stringas = 'Pavasarį žydi labai daug medžių';
 //console.log(stringas.lastIndexOf('ž'));
 
 //let test = stringas.lastIndexOf('ž') + stringas.lastIndexOf('ž') + stringas.lastIndexOf('ž') + stringas.lastIndexOf('ž');
+
+
+//Pirma užduotis
+document.querySelector('.appended-text').innerHTML += '<div class="stringai"></div>'; //Kaip ir ankstesneje uzduotyje sukurtas parent elementas uzduociai ir headingai kiekvienai is ju
+
+let stringai = document.querySelector('.stringai');
+
+stringai.innerHTML += '<h1>Stringai</h1>';
+
+stringai.innerHTML += '<h3>Pirma užduotis</h3>';
+
+let vardas = 'Will'; //Vardo kintamasis
+let pavarde = 'Ferrell'; //Pavardes kintamasis
+
+stringai.innerHTML += ( vardas.length > pavarde.length ) ? vardas : pavarde; //If Shorthand'as, jeigu vardo ilgis yra didesnis nei pavarde, tuomet atvaizduojame varda, priesingu atveju pavarde
+
+let kintamasis = ( 1 < 2 ) ? 'Test' : 'Test2'; 
+
+//Antra užduotis
+
+stringai.innerHTML += '<h3>Antra užduotis</h3>';
+
+stringai.innerHTML += vardas.toUpperCase() + ' ' + pavarde.toLowerCase();
+
+//Trečia užduotis
+
+stringai.innerHTML += '<h3>Trečia užduotis</h3>';
+
+let inicialai = vardas.charAt(0) + pavarde.charAt(0);
+
+stringai.innerHTML += inicialai;
+
+//Ketvirta užduotis
+
+stringai.innerHTML += '<h3>Ketvirta užduotis</h3>';
+
+let paskutines_vardo_raides = vardas.substr( (vardas.length - 3), 3) 
+                                + pavarde.substr( (pavarde.length - 3), 3);
+
+stringai.innerHTML += paskutines_vardo_raides;
+
+//Penkta užduotis
+
+stringai.innerHTML += '<h3>Penkta užduotis</h3>';
+
+let filmo_pavadinimas = 'Once upon a time in hollywood';
+
+stringai.innerHTML += filmo_pavadinimas.replace(/o/gi, '*');
+
+//Šešta užduotis
+
+stringai.innerHTML += '<h3>Šešta užduotis</h3>';
+
+let raides = 0;
+
+for (let i = 0; i < filmo_pavadinimas.length; i++) {
+
+   if (filmo_pavadinimas.charAt(i) == 'o' 
+        || filmo_pavadinimas.charAt(i) == 'O') 
+        raides++;
+
+}
+
+stringai.innerHTML += raides;
+
+//Septinta užduotis
+
+stringai.innerHTML += '<h3>Septinta užduotis</h3>';
+
+filmo_pavadinimas = 'An American in Paris';
+
+/*let pravalytas = '';
+
+for (let i = 0; i < filmo_pavadinimas.length; i++) {
+
+    if(!balses.includes(filmo_pavadinimas[i]))
+        pravalytas += filmo_pavadinimas[i];
+ }
+
+ stringai.innerHTML += pravalytas;
+
+*/
+
+function pravalomBalses(stringas) {
+
+    let balses = 'AaEeIiYyOoUu';
+    let pravalytas = '';
+
+    for (let i = 0; i < stringas.length; i++) {
+
+        if(!balses.includes(stringas[i]))
+            pravalytas += stringas[i];
+     }
+
+     return pravalytas;
+
+}
+
+stringai.innerHTML += pravalomBalses('An American in Paris') + '<br />';
+stringai.innerHTML += pravalomBalses('Breakfast at Tiffany\'s') + '<br />';
+stringai.innerHTML += pravalomBalses('2001: A Space Odyssey') + '<br />';
+stringai.innerHTML += pravalomBalses('It\'s a Wonderful Life') + '<br />';
+
+//Aštunta užduotis
+
+stringai.innerHTML += '<h3>Aštunta užduotis</h3>';
+
+let fraze = 'Don\'t Be a Menace to South Central While Drinking Your Juice in the Hood';
+let frazes_masyvas = fraze.split(' ');
+let zodziu_counteris = 0;
+
+for (let i = 0; i < frazes_masyvas.length; i++) {
+    
+    if(frazes_masyvas[i].length <= 5)
+        zodziu_counteris++;
+ }
+
+stringai.innerHTML += zodziu_counteris + '<br />';
+
+fraze = 'Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale';
+frazes_masyvas = fraze.split(' ');
+zodziu_counteris = 0;
+
+for (let i = 0; i < frazes_masyvas.length; i++) {
+    
+    if(frazes_masyvas[i].length <= 5)
+        zodziu_counteris++;
+}
+
+stringai.innerHTML += zodziu_counteris;
+
+//Papildoma užduotis
+
+stringai.innerHTML += '<h3>Papildoma užduotis</h3>';
+
+raides = 'abcdefghijklmnopqrstuvwxyz';
+let randomraides = '';
+
+for ( var i = 0; i < 3; i++ ) {
+
+    randomraides += raides.charAt( Math.floor( Math.random() * raides.length) );
+
+}
+
+stringai.innerHTML += randomraides;
+
