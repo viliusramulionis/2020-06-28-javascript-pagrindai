@@ -883,6 +883,26 @@ for (let i = 0; i < filmo_pavadinimas.length; i++) {
 
 */
 
+/*function testineFunkcija(fraze, zodzioilgis, z) {
+
+    if(rezimas == 1) {
+        return 'Rezimas yra 1';
+    }
+
+    if(rezimas == 0)
+        return 'Rezimas yra 0';
+
+
+    return 'Testinis grazinimas';
+}
+
+
+let testine = testineFunkcija('Dont be mad', 3);
+
+stringai.innerHTML += testineFunkcija('Dont be mad', 3);
+*/
+//console.log( testineFunkcija(0, 'test', 12) );
+
 function pravalomBalses(stringas) {
 
     let balses = 'AaEeIiYyOoUu';
@@ -898,6 +918,10 @@ function pravalomBalses(stringas) {
 
 }
 
+let atsakymas = false;
+
+if(!atsakymas)
+
 stringai.innerHTML += pravalomBalses('An American in Paris') + '<br />';
 stringai.innerHTML += pravalomBalses('Breakfast at Tiffany\'s') + '<br />';
 stringai.innerHTML += pravalomBalses('2001: A Space Odyssey') + '<br />';
@@ -907,29 +931,27 @@ stringai.innerHTML += pravalomBalses('It\'s a Wonderful Life') + '<br />';
 
 stringai.innerHTML += '<h3>Aštunta užduotis</h3>';
 
-let fraze = 'Don\'t Be a Menace to South Central While Drinking Your Juice in the Hood';
-let frazes_masyvas = fraze.split(' ');
-let zodziu_counteris = 0;
+function zodziuTikrinimas(phrase, ilgis) {
 
-for (let i = 0; i < frazes_masyvas.length; i++) {
-    
-    if(frazes_masyvas[i].length <= 5)
-        zodziu_counteris++;
- }
+    let frazes_masyvas = phrase.split(' ');
+    let zodziu_counteris = 0;
 
-stringai.innerHTML += zodziu_counteris + '<br />';
+    for (let i = 0; i < frazes_masyvas.length; i++) {
+        
+        if(frazes_masyvas[i].length <= ilgis)
+            zodziu_counteris++;
+    }
 
-fraze = 'Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale';
-frazes_masyvas = fraze.split(' ');
-zodziu_counteris = 0;
-
-for (let i = 0; i < frazes_masyvas.length; i++) {
-    
-    if(frazes_masyvas[i].length <= 5)
-        zodziu_counteris++;
+    return zodziu_counteris;
 }
 
-stringai.innerHTML += zodziu_counteris;
+let fraze = 'Don\'t Be a Menace to South Central While Drinking Your Juice in the Hood';
+let fraze2 = 'Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale';
+
+let x = zodziuTikrinimas(fraze, 5);
+
+stringai.innerHTML += x + '<br />';
+stringai.innerHTML += zodziuTikrinimas(fraze2, 5) + '<br />';
 
 //Papildoma užduotis
 
