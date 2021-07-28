@@ -988,12 +988,25 @@ function headingas(uzduotis, tema = false, tevinis = '.appended-text') {
 
     child.innerHTML += '<h3>' + uzduotis + '</h3>';
 
+    return '.' + child.className;
+
 }
 
-headingas('Pirma užduotis', 'Funkcijos 2021-07-28');
+let elementas = headingas('Pirma užduotis', 'Funkcijos 2021-07-28');
 
+function receptas(produktas, kiekis) {
+    return '<strong>' + produktas + '</strong>: ' + kiekis;
+}
 
+//console.log( receptas('Miltai', '500g.') );
 
+function gautiReceptoDuomenis() {
+    let produktas   = document.getElementById('receptas_produktas').value;
+    let kiekis      = document.getElementById('receptas_kiekis').value;
 
+    let recepto_stringas = receptas(produktas, kiekis);
 
+    document.querySelector('.receptas').innerHTML += recepto_stringas;
+}
 
+headingas('Trečia užduotis', false, elementas);
