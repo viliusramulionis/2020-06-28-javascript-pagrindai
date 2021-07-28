@@ -931,13 +931,15 @@ stringai.innerHTML += pravalomBalses('It\'s a Wonderful Life') + '<br />';
 
 stringai.innerHTML += '<h3>Aštunta užduotis</h3>';
 
-function zodziuTikrinimas(phrase, ilgis) {
-
+function zodziuTikrinimas(phrase, ilgis, stringai) {
+    
     let frazes_masyvas = phrase.split(' ');
     let zodziu_counteris = 0;
 
     for (let i = 0; i < frazes_masyvas.length; i++) {
         
+        stringai.innerHTML += frazes_masyvas[i] + ' ' + frazes_masyvas[i].length + '<br />';
+
         if(frazes_masyvas[i].length <= ilgis)
             zodziu_counteris++;
     }
@@ -948,10 +950,10 @@ function zodziuTikrinimas(phrase, ilgis) {
 let fraze = 'Don\'t Be a Menace to South Central While Drinking Your Juice in the Hood';
 let fraze2 = 'Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale';
 
-let x = zodziuTikrinimas(fraze, 5);
+let x = zodziuTikrinimas(fraze, 5, stringai);
 
 stringai.innerHTML += x + '<br />';
-stringai.innerHTML += zodziuTikrinimas(fraze2, 5) + '<br />';
+stringai.innerHTML += zodziuTikrinimas(fraze2, 5, stringai) + '<br />';
 
 //Papildoma užduotis
 
@@ -967,4 +969,31 @@ for ( var i = 0; i < 3; i++ ) {
 }
 
 stringai.innerHTML += randomraides;
+
+function headingas(uzduotis, tema = false, tevinis = '.appended-text') {
+
+    let child = document.querySelector(tevinis);
+
+    if(tema) {
+
+        let klase = tema.replace(' ', '').toLowerCase();
+
+        document.querySelector(tevinis).innerHTML += '<div class="' + klase + '"></div>'; //Kaip ir ankstesneje uzduotyje sukurtas parent elementas uzduociai ir headingai kiekvienai is ju
+
+        child = document.querySelector('.' + klase);
+        
+        child.innerHTML += '<h1>' + tema + '</h1>';
+
+    } 
+
+    child.innerHTML += '<h3>' + uzduotis + '</h3>';
+
+}
+
+headingas('Pirma užduotis', 'Funkcijos 2021-07-28');
+
+
+
+
+
 
