@@ -1226,3 +1226,10 @@ masyvasx.forEach(function(element, index) {
 masyvasx.forEach((element, index) => {
 
 }); */
+
+
+let tekstinisMasyvas = ['Jogile', 'Aiste', 'Jovita', 'Egle', 'Marius', 'Gintautas'];
+
+tekstinisMasyvas.sort();
+
+tekstinisMasyvas.reverse();
