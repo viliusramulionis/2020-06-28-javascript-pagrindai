@@ -993,6 +993,110 @@ function headingas(uzduotis, tema = false, tevinis = '.appended-text') {
 }
 
 let elementas = headingas('Pirma užduotis', 'Funkcijos 2021-07-28');
+let el_selector = document.querySelector(elementas);
+
+function parametruTikrinimas(pirmas = '', antras = '') {
+
+    if(pirmas.length > antras.length)
+        return 'Pirmasis yra didesnis už antrajį.';
+
+    if(antras.length > pirmas.length)
+        return 'Antras didesnis už pirmajį.';
+
+    return 'Abu stringai yra to paties ilgio';
+}
+
+el_selector.innerHTML += parametruTikrinimas('Grojam roką tėvo garaže', 'Aš tik baseino valytoja');
+
+headingas('Antra užduotis', false, elementas);
+
+function bureja(profesija, amzius, zmona, suo, mirtis) {
+    return 'Jūs būsite ' + profesija + ' ir gyvesite ' + amzius + 
+    '. Susituoksite su ' + zmona + ' bei turėsite šunį vardu ' + suo + 
+    ', o mirsite sulauke ' + mirtis + ' metų'; 
+}
+
+el_selector.innerHTML += bureja('tesininkas', 'laimingai', 'Morta', 'Dogis', '86');
+
+headingas('Trečia užduotis', false, elementas);
+
+function sunsAmzius(amzius) {
+    let suns_amzius = Math.round(amzius * 7);
+    let linksnis = 'metai';
+
+    if( (suns_amzius > 10 && suns_amzius < 20) || suns_amzius%10 == 0) {
+        linksnis = 'metų';
+    } 
+
+    return 'Jūsų šuniukui yra ' + suns_amzius + ' ' + linksnis;
+}
+
+el_selector.innerHTML += sunsAmzius(2);
+
+headingas('Ketvirta užduotis', false, elementas);
+
+function matai(ilgis, mylia = false) {
+
+    let skirtumas = 0.621371;
+
+    if(mylia) {
+        return ilgis / skirtumas;
+    }
+
+    return ilgis * skirtumas;
+
+}
+
+el_selector.innerHTML += matai(30, true);
+
+let masyvas = [0, 1, 2, 'Taip', 3, 'Ne'];
+
+for(let i = 0; i < masyvas.length; i++) {
+    //console.log(masyvas[i]);
+}
+
+
+
+
+
+let fiksuotas_masyvas = [5, 1, 3, 5];
+
+let naujas_masyvas = [];
+
+for(let i = 0; i < 10; i++) {
+    //let skaicius = randomSkaicius(5, 25);
+    
+    naujas_masyvas.push(i); //push funkcija prideda nauja reiksme i masyva
+}
+
+for(let i = 0; i < naujas_masyvas.length; i++) {
+
+}
+
+naujas_masyvas.forEach(cikloPaleidimas); //forEach Funkcija yra for alternatyva paleisti masyvo duomenis be kondiciju, masyvo ilgis yra automatiskai paimamas
+
+function cikloPaleidimas(reiksme, indeksas) { 
+
+    if(indeksas > 6)
+    naujas_masyvas = 'Test';
+    //console.log('Reiksme: ' + reiksme + ' Indeksas: ' + indeksas );
+}
+
+
+
+
+
+
+for(let i = 0; i < naujas_masyvas.length; i++) {
+    //console.log(naujas_masyvas[i]);
+}
+
+
+
+
+
+
+
 
 function receptas(produktas, kiekis) {
     return '<strong>' + produktas + '</strong>: ' + kiekis;
@@ -1009,4 +1113,116 @@ function gautiReceptoDuomenis() {
     document.querySelector('.receptas').innerHTML += recepto_stringas;
 }
 
-headingas('Trečia užduotis', false, elementas);
+elementas = headingas('Pirma užduotis', 'Masyvai 2021-07-30');
+
+el_selector = document.querySelector(elementas);
+
+//Generuojame masyva
+
+let masyvas_0730 = [];
+let masyvo_skaiciuokle = 0;
+let didziausias_skaicius = 0;
+let poriniai_indeksai = 0;
+
+for(let i = 0; i < 30; i++) {
+    let sugeneruotasSkaicius = randomSkaicius(5, 25);
+    masyvas_0730.push(sugeneruotasSkaicius);
+    el_selector.innerHTML += sugeneruotasSkaicius + '<br />';
+
+    if(sugeneruotasSkaicius > 10) {
+        masyvo_skaiciuokle++;
+    }
+
+    if(sugeneruotasSkaicius > didziausias_skaicius) {
+        didziausias_skaicius = sugeneruotasSkaicius;
+    }
+
+    if(i%2 == 0) {
+        poriniai_indeksai += masyvas_0730[i];
+    }
+    
+}
+
+//console.log(poriniai_indeksai);
+
+headingas('Ketvirta užduotis', false, elementas);
+
+let naujas_masyvas0730 = [];
+
+for(let i = 0; i < masyvas_0730.length; i++) {
+
+    //let dabartine_reiksme = masyvas_0730[i];
+    naujas_masyvas0730[i] = (masyvas_0730[i] - i);
+    //el_selector.innerHTML += dabartine_reiksme + ' Indeksas: ' + i + ' Pakeista reiksme' + naujas_masyvas0730[i] + '<br />';
+    el_selector.innerHTML += naujas_masyvas0730[i] + '<br />';
+
+}
+
+headingas('Penkta užduotis', false, elementas);
+
+for(let i = 0; i < 10; i++) {
+    naujas_masyvas0730.push(randomSkaicius(5, 25));
+    el_selector.innerHTML += 'Pridetos reiksmes: ' + naujas_masyvas0730[i] + '<br />';
+}
+
+headingas('Šešta užduotis', false, elementas);
+
+let pirmasis_naujas_masyvas = [];
+let antrasis_naujas_masyvas = [];
+let pirma_reiksme_mazesne_uz_10 = 0;
+
+
+naujas_masyvas0730.forEach(function(reiksme, indeksas) {
+    if(indeksas%2 == 0) {
+        pirmasis_naujas_masyvas.push(reiksme);
+    } else {
+        antrasis_naujas_masyvas.push(reiksme);
+    }
+
+    if(reiksme > 10 && pirma_reiksme_mazesne_uz_10 == 0) {
+        pirma_reiksme_mazesne_uz_10 = indeksas;
+    }
+});
+
+el_selector.innerHTML += 'Pirmas Masyvas <br />' + pirmasis_naujas_masyvas + '<br />';
+el_selector.innerHTML += 'Antrasis Masyvas <br />' + antrasis_naujas_masyvas;
+
+
+el_selector.innerHTML += '<h3>Reiksme mazesnes uz 10 indeksas </h3> ' + pirma_reiksme_mazesne_uz_10;
+
+/*
+console.log(didziausias_skaicius);
+console.log(masyvas_0730.indexOf(didziausias_skaicius));
+console.log(poriniai_indeksai);
+*/
+//console.log(masyvo_skaiciuokle);
+
+
+//Math.max antros uzduoties sprendimas
+//didziausias_skaicius = Math.max.apply(null, masyvas_0730);
+
+//console.log(masyvas_0730.indexOf(didziausias_skaicius));
+
+//Paleidziame masyva cikle
+
+for(let i = 0; i < masyvas_0730.length; i++) {
+    //masyvas_0730[i] = 'Test';
+}
+
+/*
+let maziausias_indeksas = 
+
+naujas_masyvas.forEach(function(reiksme, indeksas) {
+
+
+}); //forEach Funkcija yra for alternatyva paleisti masyvo duomenis be kondiciju, masyvo ilgis yra automatiskai paimamas
+*/
+
+/*
+masyvasx.forEach(function(element, index) {
+    masyvasy[index] = (element - index);
+});
+
+masyvasx.forEach((element, index) => {
+
+}); */
