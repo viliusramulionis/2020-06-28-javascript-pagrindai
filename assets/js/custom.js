@@ -1227,9 +1227,98 @@ masyvasx.forEach((element, index) => {
 
 }); */
 
-
+/*
 let tekstinisMasyvas = ['Jogile', 'Aiste', 'Jovita', 'Egle', 'Marius', 'Gintautas'];
 
-tekstinisMasyvas.sort();
+tekstinisMasyvas = tekstinisMasyvas.sort();
+
+console.log(tekstinisMasyvas);
 
 tekstinisMasyvas.reverse();
+*/
+
+function testineFunkcija(param1 = 0, param2 = 150, param3 = null, param4 = '') {
+
+    for(param1; param1 < param2; param1++) {
+
+    }
+
+    return [0, 150, 'test'];
+}
+
+let paduodamasParametras = [1, 2];
+let testinisKintamasis = testineFunkcija(1, 2);
+testinisKintamasis = testineFunkcija(0, 'null', 2, 4);
+
+//document.querySelector('.test').innerHTML = testinisKintamasis;
+
+function sugeneruotiUnikaluMasyva(iki) {
+
+    let masyvas = [];
+
+    while(masyvas.length < iki) {
+
+        let skaicius_0802 = randomSkaicius(100, 999);
+
+        if(!masyvas.includes(skaicius_0802)) //true arba false
+        masyvas.push(skaicius_0802);
+    }
+
+    return masyvas;
+
+}
+
+let pirmasmasyvas_0802 = sugeneruotiUnikaluMasyva(100);
+let antrasmasyvas_0802 = sugeneruotiUnikaluMasyva(100);
+
+
+let desimtiesSkaiciuMasyvas = [];
+desimtiesSkaiciuMasyvas.push(randomSkaicius(5, 25));
+desimtiesSkaiciuMasyvas.push(randomSkaicius(5, 25));
+
+for(let i = 2; i < 10; i++) {
+
+    desimtiesSkaiciuMasyvas.push(
+        desimtiesSkaiciuMasyvas[i - 2] + desimtiesSkaiciuMasyvas[i - 1]
+    );
+
+}
+
+//console.log(desimtiesSkaiciuMasyvas);
+
+let objektas = {
+        1: 213,
+        2: false,
+        3: null,
+        213: 1529,
+        test: 'Tai yra grazi reiksme'
+    };
+
+let naujas_objektas = {};
+
+naujas_objektas['pirma_reiksme'] = 1;
+
+//objektas['sukurtas'] = 'Si reiksme yra sukurta';
+
+console.log(naujas_objektas);
+
+
+
+
+
+let objektoMasyvas = {};
+
+for(let i = 0; i < pirmasmasyvas_0802.length; i++) {
+    objektoMasyvas[ pirmasmasyvas_0802[i] ] = antrasmasyvas_0802[i];
+} 
+
+
+el_selector.innerHTML +=  '<h1>Objektai</h1>';
+
+for(let indeksas in objektoMasyvas) { //Pasiimam indeksa is kiekvienos cikle praleidamos objekto eilutes
+    el_selector.innerHTML += 
+    'Indeksas = ' + indeksas + ' Reiksme = ' + 
+    objektoMasyvas[indeksas] + '<br />'; //Atvaizduojame html'e kiekvieno ciklo eigoje gaunama indeksa ir pagal ji susirandame reiksme objekte 
+}
+
+//console.log(objektoMasyvas);
