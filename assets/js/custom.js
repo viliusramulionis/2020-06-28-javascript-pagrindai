@@ -1235,7 +1235,7 @@ tekstinisMasyvas = tekstinisMasyvas.sort();
 console.log(tekstinisMasyvas);
 
 tekstinisMasyvas.reverse();
-*/
+
 
 function testineFunkcija(param1 = 0, param2 = 150, param3 = null, param4 = '') {
 
@@ -1249,7 +1249,7 @@ function testineFunkcija(param1 = 0, param2 = 150, param3 = null, param4 = '') {
 let paduodamasParametras = [1, 2];
 let testinisKintamasis = testineFunkcija(1, 2);
 testinisKintamasis = testineFunkcija(0, 'null', 2, 4);
-
+*/
 //document.querySelector('.test').innerHTML = testinisKintamasis;
 
 function sugeneruotiUnikaluMasyva(iki) {
@@ -1270,7 +1270,6 @@ function sugeneruotiUnikaluMasyva(iki) {
 
 let pirmasmasyvas_0802 = sugeneruotiUnikaluMasyva(100);
 let antrasmasyvas_0802 = sugeneruotiUnikaluMasyva(100);
-
 
 let desimtiesSkaiciuMasyvas = [];
 desimtiesSkaiciuMasyvas.push(randomSkaicius(5, 25));
@@ -1300,18 +1299,13 @@ naujas_objektas['pirma_reiksme'] = 1;
 
 //objektas['sukurtas'] = 'Si reiksme yra sukurta';
 
-console.log(naujas_objektas);
-
-
-
-
+//console.log(naujas_objektas);
 
 let objektoMasyvas = {};
 
 for(let i = 0; i < pirmasmasyvas_0802.length; i++) {
     objektoMasyvas[ pirmasmasyvas_0802[i] ] = antrasmasyvas_0802[i];
 } 
-
 
 el_selector.innerHTML +=  '<h1>Objektai</h1>';
 
@@ -1322,3 +1316,30 @@ for(let indeksas in objektoMasyvas) { //Pasiimam indeksa is kiekvienos cikle pra
 }
 
 //console.log(objektoMasyvas);
+
+function randomString(length) {
+
+    let randomraides = '';
+    let raides = 'abcdefghijklmnopqrstuvwxyz';
+
+    for ( let i = 0; i < length; i++ ) {
+
+        randomraides += raides.charAt( Math.floor( Math.random() * raides.length) );
+
+    }
+
+    return randomraides;
+
+}
+
+let OBJEKTAS_1 = {};
+
+for ( let i = 0; i < 100; i++ ) {
+
+    let randomraides = randomString(20);
+    let randomskaicius = randomSkaicius(55, 5555);
+
+    OBJEKTAS_1[randomraides] = randomskaicius;
+}
+
+//console.log(OBJEKTAS_1);
