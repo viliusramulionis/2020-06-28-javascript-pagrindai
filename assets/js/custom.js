@@ -1343,3 +1343,18 @@ for ( let i = 0; i < 100; i++ ) {
 }
 
 //console.log(OBJEKTAS_1);
+
+el_selector.innerHTML +=  '<h2>2021-08-04</h2>';
+
+let kintamasis_0804 = ['Jau','saulele','atkopdama','budino', 'svieta'];
+
+//console.log(kintamasis_0804);
+
+//delete kintamasis_0804[2];
+
+kintamasis_0804.splice(0, 1);
+kintamasis_0804.splice(1, 1);
+kintamasis_0804.splice(2, 1);
+
+//console.log(kintamasis_0804);
+
