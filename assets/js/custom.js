@@ -1463,7 +1463,7 @@ let masyvas0805 = [
     }
 ];
 
-for(let i = 0; i < 5; i++) {
+for(let i = 0; i < 500; i++) {
 
     let objektas = {
         miestas: randomString(15),
