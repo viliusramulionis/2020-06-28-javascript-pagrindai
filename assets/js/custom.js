@@ -964,7 +964,7 @@ let randomraides = '';
 
 for ( var i = 0; i < 3; i++ ) {
 
-    randomraides += raides.charAt( Math.floor( Math.random() * raides.length) );
+    randomraides += raides.charAt( Math.round( Math.random() * raides.length) );
 
 }
 
@@ -1317,6 +1317,8 @@ for(let indeksas in objektoMasyvas) { //Pasiimam indeksa is kiekvienos cikle pra
 
 //console.log(objektoMasyvas);
 
+
+
 function randomString(length) {
 
     let randomraides = '';
@@ -1344,6 +1346,8 @@ for ( let i = 0; i < 100; i++ ) {
 
 //console.log(OBJEKTAS_1);
 
+
+
 el_selector.innerHTML +=  '<h2>2021-08-04</h2>';
 
 let kintamasis_0804 = ['Jau','saulele','atkopdama','budino', 'svieta'];
@@ -1357,4 +1361,127 @@ kintamasis_0804.splice(1, 1);
 kintamasis_0804.splice(2, 1);
 
 //console.log(kintamasis_0804);
+
+function regenerateRandomNumber(masyvas = [], nuo, iki) {
+
+    for ( let i = 0; i <= masyvas.length; i++ ) {
+
+        let skaicius = randomSkaicius(nuo, iki);
+
+        if( !masyvas.includes(skaicius) )
+            return skaicius;
+
+    }
+
+} 
+
+let masyvas_0804 = [];
+
+for ( let i = 0; i <= 101; i++ ) {
+
+    masyvas_0804.push(regenerateRandomNumber(masyvas_0804, 0, 300));
+
+}
+
+let isrusiuotas_masyvas = masyvas_0804.sort( ( a,b ) => a-b ).reverse();
+let masyvas_nuo_vidurio = [];
+let pirmos_dalies_suma = 0,
+    antros_dalies_suma = 0; 
+for(let i = 0; i < isrusiuotas_masyvas.length; i++) {
+
+    if(i == 0) {
+        masyvas_nuo_vidurio.push(isrusiuotas_masyvas[i]);
+        continue;
+    }
+
+    if(i%2 == 0) {
+
+        masyvas_nuo_vidurio.push(isrusiuotas_masyvas[i]);
+        antros_dalies_suma += isrusiuotas_masyvas[i];
+
+    } else {
+
+        masyvas_nuo_vidurio.unshift(isrusiuotas_masyvas[i]);
+        pirmos_dalies_suma += isrusiuotas_masyvas[i];
+    }
+
+}
+
+// console.log(pirmos_dalies_suma);
+// console.log(antros_dalies_suma);
+
+if(pirmos_dalies_suma - antros_dalies_suma == 0)
+    console.log(pirmos_dalies_suma);
+//console.log(isrusiuotas_masyvas[vidurys]);
+el_selector.innerHTML += masyvas_nuo_vidurio.toString();
+
+let masyvas_0805 = [];
+
+for(let i = 0; i < 115; i++) {
+    masyvas_0805.push(randomSkaicius(1, 199));
+}
+
+let objektas_0805 = {};
+
+for(let i = 0; i < masyvas_0805.length; i++) {
+    if(i != 0 && i%2 == 0)
+        objektas_0805[i] = masyvas_0805[i];
+}
+
+
+
+//2021-08-05
+
+el_selector.innerHTML += '<h1>2021-08-05</h1>';
+
+el_selector.innerHTML += '<h2>Paskutinė lentelė</h2>';
+
+el_selector.innerHTML += '<table id="paskutine_lentele" class="lentele">' +
+                            '<thead>' + 
+                            '<th>Miestas</th>' +
+                            '<th>Adresas</th>' +
+                            '<th>Prekių likutis</th>' +
+                            '</thead>' + 
+                            '<tbody>' + 
+                            '</tbody>' +
+                         '</table>';
+
+
+let paskutine_lentele = document.querySelector('#paskutine_lentele > tbody');
+
+//Multidimentional array
+let masyvas0805 = [
+    {
+        miestas: 'Kaunas',
+        adresas: 'Jonavos 57',
+        likutis: 4
+    },
+    {
+        miestas: 'Vilnius',
+        adresas: 'Gelezinio 57',
+        likutis: 4
+    }
+];
+
+for(let i = 0; i < 5; i++) {
+
+    let objektas = {
+        miestas: randomString(15),
+        adresas: randomString(25),
+        likutis: randomSkaicius(1, 129)
+    }
+
+    masyvas0805.push(objektas);
+} 
+
+for(let i = 0; i < masyvas0805.length; i++) {
+    paskutine_lentele.innerHTML += '<tr><td>' + masyvas0805[i]['miestas'] + '</td>' +
+                                    '<td>' + masyvas0805[i]['adresas'] + '</td>' +
+                                    '<td>' + masyvas0805[i]['likutis'] + '</td>';
+}
+
+
+
+
+
 
