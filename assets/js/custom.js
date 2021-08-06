@@ -1317,23 +1317,6 @@ for(let indeksas in objektoMasyvas) { //Pasiimam indeksa is kiekvienos cikle pra
 
 //console.log(objektoMasyvas);
 
-
-
-function randomString(length) {
-
-    let randomraides = '';
-    let raides = 'abcdefghijklmnopqrstuvwxyz';
-
-    for ( let i = 0; i < length; i++ ) {
-
-        randomraides += raides.charAt( Math.floor( Math.random() * raides.length) );
-
-    }
-
-    return randomraides;
-
-}
-
 let OBJEKTAS_1 = {};
 
 for ( let i = 0; i < 100; i++ ) {
@@ -1360,60 +1343,7 @@ kintamasis_0804.splice(0, 1);
 kintamasis_0804.splice(1, 1);
 kintamasis_0804.splice(2, 1);
 
-//console.log(kintamasis_0804);
-
-function regenerateRandomNumber(masyvas = [], nuo, iki) {
-
-    for ( let i = 0; i <= masyvas.length; i++ ) {
-
-        let skaicius = randomSkaicius(nuo, iki);
-
-        if( !masyvas.includes(skaicius) )
-            return skaicius;
-
-    }
-
-} 
-
-let masyvas_0804 = [];
-
-for ( let i = 0; i <= 101; i++ ) {
-
-    masyvas_0804.push(regenerateRandomNumber(masyvas_0804, 0, 300));
-
-}
-
-let isrusiuotas_masyvas = masyvas_0804.sort( ( a,b ) => a-b ).reverse();
-let masyvas_nuo_vidurio = [];
-let pirmos_dalies_suma = 0,
-    antros_dalies_suma = 0; 
-for(let i = 0; i < isrusiuotas_masyvas.length; i++) {
-
-    if(i == 0) {
-        masyvas_nuo_vidurio.push(isrusiuotas_masyvas[i]);
-        continue;
-    }
-
-    if(i%2 == 0) {
-
-        masyvas_nuo_vidurio.push(isrusiuotas_masyvas[i]);
-        antros_dalies_suma += isrusiuotas_masyvas[i];
-
-    } else {
-
-        masyvas_nuo_vidurio.unshift(isrusiuotas_masyvas[i]);
-        pirmos_dalies_suma += isrusiuotas_masyvas[i];
-    }
-
-}
-
-// console.log(pirmos_dalies_suma);
-// console.log(antros_dalies_suma);
-
-if(pirmos_dalies_suma - antros_dalies_suma == 0)
-    console.log(pirmos_dalies_suma);
-//console.log(isrusiuotas_masyvas[vidurys]);
-el_selector.innerHTML += masyvas_nuo_vidurio.toString();
+el_selector.innerHTML += virskinam101masyva().toString();
 
 let masyvas_0805 = [];
 
@@ -1480,8 +1410,41 @@ for(let i = 0; i < masyvas0805.length; i++) {
                                     '<td>' + masyvas0805[i]['likutis'] + '</td>';
 }
 
+// let test2021 = new pirmojiKlase(2, 15);
+// document.querySelector('.klases-grazinimas').innerHTML = test2021.test2();
 
 
+// function test20121() {
 
+//     let x = 0;
 
+// }
 
+function switchFunkcija(get) {
+
+    let grazinimas = '';
+
+    switch(get) {
+
+        case 'pirmas':
+            grazinimas = 'Rezultatas yra pirmas';
+        break;
+
+        case 'antras':
+            grazinimas = 'Rezultatas yra antras';
+        break;
+
+        case 'trecias':
+            grazinimas = 'Rezultatas yra trecias';
+        break;
+
+        default:
+            grazinimas = 'Parametras nepaduotas';
+
+    }
+
+    return grazinimas;
+
+}
+
+//console.log(switchFunkcija(''));
