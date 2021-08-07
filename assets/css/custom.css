@@ -59,3 +59,11 @@ body {
     left: 200px; 
     font-weight: bold;
 }
+
+.paskutine_lentele::before {
+    content: "Before ";
+}
+
+.paskutine_lentele::after {
+    content: " After";
+}

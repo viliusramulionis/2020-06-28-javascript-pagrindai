@@ -1343,6 +1343,8 @@ kintamasis_0804.splice(0, 1);
 kintamasis_0804.splice(1, 1);
 kintamasis_0804.splice(2, 1);
 
+
+//Olimpine uzduotis
 el_selector.innerHTML += virskinam101masyva().toString();
 
 let masyvas_0805 = [];
@@ -1364,7 +1366,7 @@ for(let i = 0; i < masyvas_0805.length; i++) {
 
 el_selector.innerHTML += '<h1>2021-08-05</h1>';
 
-el_selector.innerHTML += '<h2>Paskutinė lentelė</h2>';
+el_selector.innerHTML += '<h2 class="paskutine_lentele">Paskutinė lentelė</h2>';
 
 el_selector.innerHTML += '<table id="paskutine_lentele" class="lentele">' +
                             '<thead>' + 
@@ -1393,7 +1395,7 @@ let masyvas0805 = [
     }
 ];
 
-for(let i = 0; i < 500; i++) {
+for(let i = 0; i < 15; i++) {
 
     let objektas = {
         miestas: randomString(15),

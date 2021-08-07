@@ -59,7 +59,7 @@ function virskinam101masyva() {
             continue;
         }
 
-        if(i%2 == 0) {
+        if(antros_dalies_suma<pirmos_dalies_suma) {
 
             masyvas_nuo_vidurio.push(isrusiuotas_masyvas[i]);
             antros_dalies_suma += isrusiuotas_masyvas[i];
@@ -72,7 +72,7 @@ function virskinam101masyva() {
 
     }
 
-    if(Math.abs(pirmos_dalies_suma - antros_dalies_suma) > 130)
+    if(Math.abs(pirmos_dalies_suma - antros_dalies_suma) > 30)
         return virskinam101masyva();
 
     return masyvas_nuo_vidurio;
